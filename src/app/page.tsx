@@ -1,5 +1,11 @@
-const Home = () => {
-  return <div>Home</div>;
+import Header from "./components/Header";
+
+const App = () => {
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
-export default Home;
+export default App;

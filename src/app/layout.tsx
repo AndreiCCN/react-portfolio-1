@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
 
 const geistInter = Inter({
   variable: "--font-geist-inter",
@@ -23,10 +22,7 @@ export default function RootLayout({
       lang="en"
       className="scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-500"
     >
-      <body className={`${geistInter.variable} antialiased`}>
-        <Header />
-        {children}
-      </body>
+      <body className={`${geistInter.variable} antialiased`}>{children}</body>
     </html>
   );
 }
