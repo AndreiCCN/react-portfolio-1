@@ -1,4 +1,4 @@
-export const GlobeIcon = ({ w, h }: { w: number; h: number }) => {
+const GlobeIcon = ({ w, h }: { w: number; h: number }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ export const GlobeIcon = ({ w, h }: { w: number; h: number }) => {
   );
 };
 
-export const MenuIcon = ({ w, h }: { w: number; h: number }) => {
+const MenuIcon = ({ w, h }: { w: number; h: number }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export const MenuIcon = ({ w, h }: { w: number; h: number }) => {
   );
 };
 
-export const CloseIcon = ({ w, h }: { w: number; h: number }) => {
+const CloseIcon = ({ w, h }: { w: number; h: number }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -39,3 +39,5 @@ export const CloseIcon = ({ w, h }: { w: number; h: number }) => {
     </svg>
   );
 };
+
+export { GlobeIcon, MenuIcon, CloseIcon };
