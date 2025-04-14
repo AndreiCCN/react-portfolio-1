@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ArrowDownIcon, DownloadIcon } from "./Icons";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -26,7 +28,22 @@ const Hero = () => {
             Bulding Scalable Modern Websites for the Future
           </h2>
           <div className="flex items-center gap-3">
-            ButtonPrimary ButtonOutline
+            <Button
+              variant="primary"
+              href=""
+              target=""
+              label="Download CV"
+              icon={<DownloadIcon w={18} h={18} fillColor="inherit" />}
+              classes=""
+            />
+            <Button
+              variant="outline"
+              href="#about"
+              target=""
+              label="Scroll Down"
+              icon={<ArrowDownIcon w={18} h={18} fillColor="#ffffff" />}
+              classes=""
+            />
           </div>
         </div>
         <div className="hidden lg:block">

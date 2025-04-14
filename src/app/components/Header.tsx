@@ -13,7 +13,7 @@ const Header = () => {
       <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr_3fr_1fr]">
         <h1>
           <Link href="#home">
-            <GlobeIcon w={40} h={40} />
+            <GlobeIcon w={40} h={40} fillColor="#ffffff" />
           </Link>
         </h1>
         <div className="relative md:justify-self-center">
@@ -21,7 +21,11 @@ const Header = () => {
             className="menu-btn md:hidden!"
             onClick={() => setNavOpen((prev) => !prev)}
           >
-            {navOpen ? <CloseIcon w={30} h={30} /> : <MenuIcon w={30} h={30} />}
+            {navOpen ? (
+              <CloseIcon w={30} h={30} fillColor="#ffffff" />
+            ) : (
+              <MenuIcon w={30} h={30} fillColor="#ffffff" />
+            )}
           </button>
           <Navbar navOpen={navOpen} />
         </div>
