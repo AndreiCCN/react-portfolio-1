@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { useState } from "react";
+import { CloseIcon, GlobeIcon, MenuIcon } from "./Icons";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -11,50 +12,22 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0">
       <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr_3fr_1fr]">
         <h1>
-          <Link href="/" className="logo">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="40px"
-              viewBox="0 -960 960 960"
-              width="40px"
-              fill="#ffffff"
-            >
-              <path d="M480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm-.18-66.67q139.58 0 236.46-97.33 96.87-97.33 96.87-236 0-5-.16-9.5-.17-4.5-.17-8.17-5.67 27-27.27 45t-51.06 18h-80q-33 0-56.5-23.5t-23.5-56.5v-40h-160v-80q0-33 23.5-56.5t56.5-23.5h40v-14.66q0-18.34 13.16-40.17 13.17-21.83 30.5-28.83-23.33-7-47.73-11-24.41-4-50.6-4-138.67 0-236 96.87-97.33 96.88-97.33 236.46h166.66q66 0 113 47t47 113v40h-120v106.67q29.34 13 60.97 19.83 31.63 6.83 65.7 6.83Z" />
-            </svg>
+          <Link href="/">
+            <GlobeIcon w={40} h={40} />
           </Link>
         </h1>
         <div className="relative md:justify-self-center">
           <button
-            className="menu-btn md:hidden"
+            className="menu-btn md:hidden!"
             onClick={() => setNavOpen((prev) => !prev)}
           >
-            {navOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="30px"
-                viewBox="0 -960 960 960"
-                width="30px"
-                fill="#ffffff"
-              >
-                <path d="M480-433.33 274.67-228q-9.67 9.67-23.34 9.67-13.66 0-23.33-9.67-9.67-9.67-9.67-23.33 0-13.67 9.67-23.34L433.33-480 228-685.33q-9.67-9.67-9.67-23.34 0-13.66 9.67-23.33 9.67-9.67 23.33-9.67 13.67 0 23.34 9.67L480-526.67 685.33-732q9.67-9.67 23.34-9.67 13.66 0 23.33 9.67 9.67 9.67 9.67 23.33 0 13.67-9.67 23.34L526.67-480 732-274.67q9.67 9.67 9.67 23.34 0 13.66-9.67 23.33-9.67 9.67-23.33 9.67-13.67 0-23.34-9.67L480-433.33Z" />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="30px"
-                viewBox="0 -960 960 960"
-                width="30px"
-                fill="#ffffff"
-              >
-                <path d="M153.33-240q-14.16 0-23.75-9.62-9.58-9.61-9.58-23.83 0-14.22 9.58-23.72 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.62 9.58 9.62 9.58 23.83 0 14.22-9.58 23.72-9.59 9.5-23.75 9.5H153.33Zm0-206.67q-14.16 0-23.75-9.61-9.58-9.62-9.58-23.84 0-14.21 9.58-23.71 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.61 9.58 9.62 9.58 23.84 0 14.21-9.58 23.71-9.59 9.5-23.75 9.5H153.33Zm0-206.66q-14.16 0-23.75-9.62-9.58-9.62-9.58-23.83 0-14.22 9.58-23.72 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.62 9.58 9.61 9.58 23.83 0 14.22-9.58 23.72-9.59 9.5-23.75 9.5H153.33Z" />
-              </svg>
-            )}
+            {navOpen ? <CloseIcon w={30} h={30} /> : <MenuIcon w={30} h={30} />}
           </button>
           <Navbar navOpen={navOpen} />
         </div>
         <Link
           href="#contact"
-          className="btn btn-secondary max-md:hidden md:justify-self-end"
+          className="btn btn-secondary max-md:hidden! md:justify-self-end"
         >
           Contact Me
         </Link>

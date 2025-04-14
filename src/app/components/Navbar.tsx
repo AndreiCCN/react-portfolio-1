@@ -8,6 +8,7 @@ const Navbar = ({ navOpen }: { navOpen: boolean }) => {
   const activeBox = useRef(null);
 
   const initActiveBox = () => {
+    window.addEventListener("resize", initActiveBox);
     activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
     activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
     activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
@@ -61,7 +62,7 @@ const Navbar = ({ navOpen }: { navOpen: boolean }) => {
     {
       label: "Contact",
       link: "#contact",
-      className: "nav-link md:hidden",
+      className: "nav-link md:hidden!",
       ref: null,
     },
   ];
