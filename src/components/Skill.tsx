@@ -1,3 +1,5 @@
+import SkillCard from "./SkillCard";
+
 const skillItems: { imgSrc: string; label: string; desc: string }[] = [
   {
     imgSrc: "/images/figma.svg",
@@ -50,9 +52,16 @@ const Skill = () => {
           Discover the powerful tools and technologies I use to create
           exceptional, high-performing websites & applications.
         </p>
-        <div className="">
-          {skillItems.map(() => {
-            return <></>;
+        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
+          {skillItems.map(({ imgSrc, label, desc }, index) => {
+            return (
+              <SkillCard
+                key={`skill-item-${index}`}
+                imgSrc={imgSrc}
+                label={label}
+                desc={desc}
+              />
+            );
           })}
         </div>
       </div>
