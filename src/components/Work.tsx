@@ -1,3 +1,5 @@
+import ProjectCard from "./ProjectCard";
+
 const works: {
   imgSrc: string;
   title: string;
@@ -47,9 +49,17 @@ const Work = () => {
     <section id="work" className="pt-20 lg:pt-32">
       <div className="container">
         <h2 className="headline-2 mb-8">My portfolio highlights</h2>
-        <div className="">
-          {works.map(() => {
-            return <></>;
+        <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
+          {works.map(({ imgSrc, title, tags, projectLink }, index) => {
+            return (
+              <ProjectCard
+                key={`project-card-${index}`}
+                imgSrc={imgSrc}
+                title={title}
+                tags={tags}
+                projectLink={projectLink}
+              />
+            );
           })}
         </div>
       </div>

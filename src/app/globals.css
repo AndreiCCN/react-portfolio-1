@@ -20,6 +20,9 @@ body {
 .headline-2 {
   @apply text-3xl lg:text-4xl lg:leading-tight font-semibold;
 }
+.title-1 {
+  @apply text-[22px] font-normal;
+}
 
 .container {
   @apply px-4 mx-auto lg:px-8 xl:max-w-6xl;

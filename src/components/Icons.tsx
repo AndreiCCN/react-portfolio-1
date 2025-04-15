@@ -6,6 +6,7 @@ interface IconProps {
   fillColor: string;
   className?: string;
   ariaLabel?: string;
+  ariaHidden?: boolean;
 }
 
 interface SvgWrapperProps extends IconProps {
@@ -19,6 +20,7 @@ const SvgWrapper = ({
   fillColor,
   className,
   ariaLabel,
+  ariaHidden,
 }: SvgWrapperProps) => {
   return (
     <svg
@@ -30,6 +32,7 @@ const SvgWrapper = ({
       fill={fillColor}
       className={className}
       aria-label={ariaLabel}
+      aria-hidden={ariaHidden}
     >
       {children}
     </svg>
@@ -84,6 +87,14 @@ const PersonIcon = (props: IconProps) => {
   );
 };
 
+const ArrowOutwardIcon = (props: IconProps) => {
+  return (
+    <SvgWrapper {...props}>
+      <path d="M246.67-244 200-290.67l402.67-402.66H236V-760h480v480h-66.67v-366.67L246.67-244Z" />
+    </SvgWrapper>
+  );
+};
+
 export {
   GlobeIcon,
   MenuIcon,
@@ -91,4 +102,5 @@ export {
   DownloadIcon,
   ArrowDownIcon,
   PersonIcon,
+  ArrowOutwardIcon,
 };
