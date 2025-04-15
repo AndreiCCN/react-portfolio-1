@@ -9,7 +9,12 @@ const Hero = () => {
         <div>
           <div className="flex items-center gap-3">
             <figure className="img-box w-9 h-9 flex items-center justify-center rounded-lg">
-              <PersonIcon w={25} h={25} fillColor="#ffffff" />
+              <PersonIcon
+                width={25}
+                height={25}
+                fillColor="#ffffff"
+                ariaLabel="Person icon"
+              />
             </figure>
             <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-emerald-400">
@@ -27,7 +32,14 @@ const Hero = () => {
               href=""
               target=""
               label="Download CV"
-              icon={<DownloadIcon w={18} h={18} fillColor="inherit" />}
+              icon={
+                <DownloadIcon
+                  width={18}
+                  height={18}
+                  fillColor="inherit"
+                  ariaLabel="Download icon"
+                />
+              }
               classes=""
             />
             <Button
@@ -35,7 +47,14 @@ const Hero = () => {
               href="#about"
               target=""
               label="Scroll Down"
-              icon={<ArrowDownIcon w={18} h={18} fillColor="#ffffff" />}
+              icon={
+                <ArrowDownIcon
+                  width={18}
+                  height={18}
+                  fillColor="#ffffff"
+                  ariaLabel="Arrow down icon"
+                />
+              }
               classes=""
             />
           </div>

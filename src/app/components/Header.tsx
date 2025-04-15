@@ -13,7 +13,12 @@ const Header = () => {
       <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr_3fr_1fr]">
         <h1>
           <Link href="#home">
-            <GlobeIcon w={40} h={40} fillColor="#ffffff" />
+            <GlobeIcon
+              width={40}
+              height={40}
+              fillColor="#ffffff"
+              ariaLabel="Globe icon"
+            />
           </Link>
         </h1>
         <div className="relative md:justify-self-center">
@@ -22,9 +27,19 @@ const Header = () => {
             onClick={() => setNavOpen((prev) => !prev)}
           >
             {navOpen ? (
-              <CloseIcon w={30} h={30} fillColor="#ffffff" />
+              <CloseIcon
+                width={30}
+                height={30}
+                fillColor="#ffffff"
+                ariaLabel="Close icon"
+              />
             ) : (
-              <MenuIcon w={30} h={30} fillColor="#ffffff" />
+              <MenuIcon
+                width={30}
+                height={30}
+                fillColor="#ffffff"
+                ariaLabel="Menu icon"
+              />
             )}
           </button>
           <Navbar navOpen={navOpen} />

@@ -1,133 +1,94 @@
-const GlobeIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
+import { ReactNode } from "react";
+
+interface IconProps {
+  width: number;
+  height: number;
   fillColor: string;
-}) => {
+  className?: string;
+  ariaLabel?: string;
+}
+
+interface SvgWrapperProps extends IconProps {
+  children: ReactNode;
+}
+
+const SvgWrapper = ({
+  children,
+  width,
+  height,
+  fillColor,
+  className,
+  ariaLabel,
+}: SvgWrapperProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
+      role="img"
+      width={`${width}px`}
+      height={`${height}px`}
       fill={fillColor}
+      className={className}
+      aria-label={ariaLabel}
     >
+      {children}
+    </svg>
+  );
+};
+
+const GlobeIcon = (props: IconProps) => {
+  return (
+    <SvgWrapper {...props}>
       <path d="M480.18-80q-82.83 0-155.67-31.5-72.84-31.5-127.18-85.83Q143-251.67 111.5-324.56T80-480.33q0-82.88 31.5-155.78Q143-709 197.33-763q54.34-54 127.23-85.5T480.33-880q82.88 0 155.78 31.5Q709-817 763-763t85.5 127Q880-563 880-480.18q0 82.83-31.5 155.67Q817-251.67 763-197.46q-54 54.21-127 85.84Q563-80 480.18-80Zm-.18-66.67q139.58 0 236.46-97.33 96.87-97.33 96.87-236 0-5-.16-9.5-.17-4.5-.17-8.17-5.67 27-27.27 45t-51.06 18h-80q-33 0-56.5-23.5t-23.5-56.5v-40h-160v-80q0-33 23.5-56.5t56.5-23.5h40v-14.66q0-18.34 13.16-40.17 13.17-21.83 30.5-28.83-23.33-7-47.73-11-24.41-4-50.6-4-138.67 0-236 96.87-97.33 96.88-97.33 236.46h166.66q66 0 113 47t47 113v40h-120v106.67q29.34 13 60.97 19.83 31.63 6.83 65.7 6.83Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-const MenuIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
-  fillColor: string;
-}) => {
+const MenuIcon = (props: IconProps) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
-      fill={fillColor}
-    >
+    <SvgWrapper {...props}>
       <path d="M153.33-240q-14.16 0-23.75-9.62-9.58-9.61-9.58-23.83 0-14.22 9.58-23.72 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.62 9.58 9.62 9.58 23.83 0 14.22-9.58 23.72-9.59 9.5-23.75 9.5H153.33Zm0-206.67q-14.16 0-23.75-9.61-9.58-9.62-9.58-23.84 0-14.21 9.58-23.71 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.61 9.58 9.62 9.58 23.84 0 14.21-9.58 23.71-9.59 9.5-23.75 9.5H153.33Zm0-206.66q-14.16 0-23.75-9.62-9.58-9.62-9.58-23.83 0-14.22 9.58-23.72 9.59-9.5 23.75-9.5h653.34q14.16 0 23.75 9.62 9.58 9.61 9.58 23.83 0 14.22-9.58 23.72-9.59 9.5-23.75 9.5H153.33Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-const CloseIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
-  fillColor: string;
-}) => {
+const CloseIcon = (props: IconProps) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
-      fill={fillColor}
-    >
+    <SvgWrapper {...props}>
       <path d="M480-433.33 274.67-228q-9.67 9.67-23.34 9.67-13.66 0-23.33-9.67-9.67-9.67-9.67-23.33 0-13.67 9.67-23.34L433.33-480 228-685.33q-9.67-9.67-9.67-23.34 0-13.66 9.67-23.33 9.67-9.67 23.33-9.67 13.67 0 23.34 9.67L480-526.67 685.33-732q9.67-9.67 23.34-9.67 13.66 0 23.33 9.67 9.67 9.67 9.67 23.33 0 13.67-9.67 23.34L526.67-480 732-274.67q9.67 9.67 9.67 23.34 0 13.66-9.67 23.33-9.67 9.67-23.33 9.67-13.67 0-23.34-9.67L480-433.33Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-const DownloadIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
-  fillColor: string;
-}) => {
+const DownloadIcon = (props: IconProps) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
-      fill={fillColor}
-    >
+    <SvgWrapper {...props}>
       <path d="M479.91-329q-6.58 0-12.24-2.17-5.67-2.16-11-7.5L308-487.33q-10-10.18-9.5-23.76.5-13.58 9.91-23.58 10.26-10 24.09-10.16 13.83-.17 23.83 9.83l90.34 91v-322.67q0-14.16 9.61-23.75 9.62-9.58 23.84-9.58 14.21 0 23.71 9.58 9.5 9.59 9.5 23.75V-444l91-91q9.87-10 23.44-9.5 13.56.5 23.82 10.5 9.41 10 9.58 23.67.16 13.66-9.84 23.66l-148 148q-5.33 5.34-11.09 7.5-5.75 2.17-12.33 2.17ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67v-102q0-14.16 9.62-23.75 9.61-9.58 23.83-9.58 14.22 0 23.72 9.58 9.5 9.59 9.5 23.75v102h506.66v-102q0-14.16 9.62-23.75 9.62-9.58 23.83-9.58 14.22 0 23.72 9.58 9.5 9.59 9.5 23.75v102q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-const ArrowDownIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
-  fillColor: string;
-}) => {
+const ArrowDownIcon = (props: IconProps) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
-      fill={fillColor}
-    >
+    <SvgWrapper {...props}>
       <path d="M446.67-287v-479.67q0-14.33 9.5-23.83 9.5-9.5 23.83-9.5 14.33 0 23.83 9.5 9.5 9.5 9.5 23.83V-287L730-503.67q10-10 23.33-9.83 13.34.17 23.34 10.17 9.66 10 9.83 23.33.17 13.33-9.83 23.33L503.33-183.33q-5.33 5.33-11 7.5-5.66 2.16-12.33 2.16t-12.33-2.16q-5.67-2.17-11-7.5L183.33-456.67q-9.66-9.66-9.66-23.16t9.66-23.5q10-10 23.5-10t23.5 10L446.67-287Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-const PersonIcon = ({
-  w,
-  h,
-  fillColor,
-}: {
-  w: number;
-  h: number;
-  fillColor: string;
-}) => {
+const PersonIcon = (props: IconProps) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-      width={`${w}px`}
-      height={`${h}px`}
-      fill={fillColor}
-    >
+    <SvgWrapper {...props}>
       <path d="M480-480.67q-66 0-109.67-43.66Q326.67-568 326.67-634t43.66-109.67Q414-787.33 480-787.33t109.67 43.66Q633.33-700 633.33-634t-43.66 109.67Q546-480.67 480-480.67ZM160-160v-100q0-36.67 18.5-64.17T226.67-366q65.33-30.33 127.66-45.5 62.34-15.17 125.67-15.17t125.33 15.5q62 15.5 127.28 45.3 30.54 14.42 48.96 41.81Q800-296.67 800-260v100H160Zm66.67-66.67h506.66V-260q0-14.33-8.16-27-8.17-12.67-20.5-19-60.67-29.67-114.34-41.83Q536.67-360 480-360t-111 12.17Q314.67-335.67 254.67-306q-12.34 6.33-20.17 19-7.83 12.67-7.83 27v33.33ZM480-547.33q37 0 61.83-24.84Q566.67-597 566.67-634t-24.84-61.83Q517-720.67 480-720.67t-61.83 24.84Q393.33-671 393.33-634t24.84 61.83Q443-547.33 480-547.33Zm0-86.67Zm0 407.33Z" />
-    </svg>
+    </SvgWrapper>
   );
 };
 
-export { GlobeIcon, MenuIcon, CloseIcon, DownloadIcon, ArrowDownIcon, PersonIcon };
+export {
+  GlobeIcon,
+  MenuIcon,
+  CloseIcon,
+  DownloadIcon,
+  ArrowDownIcon,
+  PersonIcon,
+};
