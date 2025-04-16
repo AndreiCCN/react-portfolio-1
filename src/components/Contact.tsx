@@ -1,33 +1,5 @@
-import { ReactNode } from "react";
-import { GithubIcon, LinkedInIcon } from "./Icons";
+import { socialLinks } from "@/utils/socialLinks";
 import Link from "next/link";
-
-const socialLinks: { href: string; icon: ReactNode }[] = [
-  {
-    href: "https://www.github.com/AndreiCCN",
-    icon: (
-      <GithubIcon
-        width={24}
-        height={24}
-        fillColor="#ffffff"
-        viewBox="0 0 24 24"
-        className="group-hover:fill-zinc-950"
-      />
-    ),
-  },
-  {
-    href: "https://www.linkedin.com/in/nicolae-andrei-cuconoiu",
-    icon: (
-      <LinkedInIcon
-        width={24}
-        height={24}
-        fillColor="#ffffff"
-        viewBox="0 0 24 24"
-        className="group-hover:fill-zinc-950"
-      />
-    ),
-  },
-];
 
 const Contact = () => {
   return (

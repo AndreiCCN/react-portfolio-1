@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "./Button";
 import { ChevronRightIcon, GlobeIcon } from "./Icons";
+import { socialLinks } from "@/utils/socialLinks";
 
 const sitemap: { label: string; href: string }[] = [
   { label: "Home", href: "#home" },
@@ -8,17 +9,6 @@ const sitemap: { label: string; href: string }[] = [
   { label: "Work", href: "#work" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact me", href: "#contact" },
-];
-
-const socials: { label: string; href: string }[] = [
-  {
-    label: "Github",
-    href: "https://www.github.com/AndreiCCN",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/nicolae-andrei-cuconoiu",
-  },
 ];
 
 const ListItem = ({
@@ -87,7 +77,7 @@ const Footer = () => {
             <div>
               <p className="mb-2">Socials</p>
               <ul>
-                {socials.map(({ label, href }, index) => {
+                {socialLinks.map(({ label, href }, index) => {
                   return (
                     <ListItem
                       key={`social-item-${index}`}
