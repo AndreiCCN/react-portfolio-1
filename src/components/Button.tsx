@@ -3,18 +3,18 @@ import { ReactNode } from "react";
 
 const Button = ({
   variant,
-  href,
-  target,
   label,
   icon,
+  href,
+  target,
   classes,
 }: {
   variant: string;
-  href: string;
-  target: string;
   label: string;
-  icon: ReactNode;
-  classes: string;
+  icon?: ReactNode;
+  href?: string;
+  target?: string;
+  classes?: string;
 }) => {
   return href ? (
     <Link

@@ -29,8 +29,6 @@ const Hero = () => {
           <div className="flex items-center gap-3">
             <Button
               variant="primary"
-              href=""
-              target=""
               label="Download CV"
               icon={
                 <DownloadIcon
@@ -40,12 +38,10 @@ const Hero = () => {
                   ariaLabel="Download icon"
                 />
               }
-              classes=""
             />
             <Button
               variant="outline"
               href="#about"
-              target=""
               label="Scroll Down"
               icon={
                 <ArrowDownIcon
@@ -55,7 +51,6 @@ const Hero = () => {
                   ariaLabel="Arrow down icon"
                 />
               }
-              classes=""
             />
           </div>
         </div>

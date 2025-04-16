@@ -47,7 +47,6 @@ const Footer = () => {
               variant="primary"
               href="mailto:andreicuconoiu@gmail.com"
               label="Start project"
-              target=""
               icon={
                 <ChevronRightIcon
                   width={20}
@@ -56,7 +55,6 @@ const Footer = () => {
                   ariaLabel="Chevron right icon"
                 />
               }
-              classes=""
             />
           </div>
           <div className="grid grid-cols-2 gap-4 lg:pl-20">
