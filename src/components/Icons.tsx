@@ -113,6 +113,14 @@ const LinkedInIcon = (props: IconProps) => {
   );
 };
 
+const ChevronRightIcon = (props: IconProps) => {
+  return (
+    <SvgWrapper {...props}>
+      <path d="M521.33-480.67 328-674l47.33-47.33L616-480.67 375.33-240 328-287.33l193.33-193.34Z" />
+    </SvgWrapper>
+  );
+};
+
 export {
   GlobeIcon,
   MenuIcon,
@@ -123,4 +131,5 @@ export {
   ArrowOutwardIcon,
   GithubIcon,
   LinkedInIcon,
+  ChevronRightIcon,
 };
