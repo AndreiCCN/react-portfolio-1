@@ -54,12 +54,6 @@ const Navbar = ({ navOpen }: { navOpen: boolean }) => {
       ref: null,
     },
     {
-      label: "Reviews",
-      link: "#reviews",
-      className: "nav-link",
-      ref: null,
-    },
-    {
       label: "Contact",
       link: "#contact",
       className: "nav-link md:hidden!",
