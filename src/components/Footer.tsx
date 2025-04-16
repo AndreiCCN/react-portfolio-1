@@ -21,6 +21,28 @@ const socials: { label: string; href: string }[] = [
   },
 ];
 
+const ListItem = ({
+  label,
+  href,
+  target,
+}: {
+  label: string;
+  href: string;
+  target?: string;
+}) => {
+  return (
+    <li>
+      <Link
+        href={href}
+        target={target}
+        className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200"
+      >
+        {label}
+      </Link>
+    </li>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="pt-20 lg:pt-32">
@@ -53,14 +75,11 @@ const Footer = () => {
               <ul>
                 {sitemap.map(({ label, href }, index) => {
                   return (
-                    <li key={`sitemap-item-${index}`}>
-                      <Link
-                        href={href}
-                        className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200"
-                      >
-                        {label}
-                      </Link>
-                    </li>
+                    <ListItem
+                      key={`sitemap-item-${index}`}
+                      label={label}
+                      href={href}
+                    />
                   );
                 })}
               </ul>
@@ -70,15 +89,12 @@ const Footer = () => {
               <ul>
                 {socials.map(({ label, href }, index) => {
                   return (
-                    <li key={`sitemap-item-${index}`}>
-                      <Link
-                        href={href}
-                        target="_blank"
-                        className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200"
-                      >
-                        {label}
-                      </Link>
-                    </li>
+                    <ListItem
+                      key={`social-item-${index}`}
+                      label={label}
+                      href={href}
+                      target="_blank"
+                    />
                   );
                 })}
               </ul>
@@ -91,7 +107,7 @@ const Footer = () => {
           </Link>
 
           <p className="text-zinc-500 text-sm">
-            &copy; 2024
+            &copy; 2025{" "}
             <span className="text-zinc-200">Nicolae-Andrei Cuconoiu</span>
           </p>
         </div>
